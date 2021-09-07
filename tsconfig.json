@@ -1,0 +1,86 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    /* Strict Type-Checking Options */
+    // "strict": true,
+    // "noImplicitAny": true,
+    // "strictNullChecks": true,
+    // "strictFunctionTypes": true,
+    // "strictBindCallApply": true,
+    // "strictPropertyInitialization": true,
+    // "noImplicitThis": true,
+    // "alwaysStrict": true,
+    /* Additional Checks */
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noImplicitReturns": true,
+    // "noFallthroughCasesInSwitch": true,
+    /* Module Resolution Options */
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    /* Advanced Options */
+    // "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "outDir": "dist",
+    "paths": {
+      "@config": [
+        "config/index"
+      ],
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@models": [
+        "models/index"
+      ],
+      "@routes": [
+        "routes/index"
+      ],
+      "@services": [
+        "services/index"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@middleware": [
+        "middleware/index"
+      ],
+      "@types": [
+        "types/index"
+      ],
+      "@subscribers": [
+        "subscribers/index"
+      ],
+      "@job": [
+        "job/index"
+      ],
+      "@helpers": [
+        "helpers/index"
+      ],
+      "@i18n": [
+        "i18n/index"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/models/product_ship_merchant.model.ts",
+    "src/models/df_status_order.model.ts",
+    "src/helpers/uploadThread.ts"
+  ],
+  "files": [
+    "src/globalType.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

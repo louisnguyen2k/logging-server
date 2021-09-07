@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  pwm_server:
+    env_file:
+      - .env
+    # image: louisnguyen2000/pwm_server:dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - overlay
+networks:
+  overlay:

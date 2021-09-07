@@ -1,0 +1,53 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*.controller.ts"],
+  "spec": {
+    "outputDirectory": "public",
+    "basePath": "/api/v1",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "token": {
+        "name": "token",
+        "type": "apiKey",
+        "in": "header"
+      }
+    },
+    "specMerging": "recursive",
+    "spec": {
+      "servers": [
+        {
+          "url": "/api/v1"
+        },
+        {
+          "url": "{server}/api/v1",
+          "variables": {
+            "server": {
+              "default": "http://3.1.13.10:8010/"
+            }
+          }
+        }
+      ],
+      "paths": {
+        "/files/uploadImage": {
+          "post": {
+            "consumes": ["multipart/form-data"],
+            "parameters": [
+              {
+                "in": "formData",
+                "name": "image",
+                "required": true,
+                "type": "file"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "routes": {
+    "basePath": "/api/v1",
+    "authenticationModule": "./src/middleware/auth.middleware.ts",
+    "routesDir": "src/routes"
+  }
+}
