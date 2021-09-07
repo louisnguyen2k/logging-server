@@ -1,2 +1,2 @@
-Name project: Play with me
-Author: LDKH Team
+Name project: Logging service
+Author: Louis Nguyen
