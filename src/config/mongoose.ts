@@ -3,7 +3,7 @@ import { environment, logger } from '.';
 
 const connectionMongodb = (): Mongoose => {
   const mongoose: Mongoose = new Mongoose();
-  const uri = `mongodb://${environment.mongo_user}:${environment.mongo_password}@${environment.mongo_host}:${environment.mongo_port}/${environment.mongo_dbname}`;
+  const uri = `mongodb://root:${environment.mongo_password}@${environment.mongo_host}:${environment.mongo_port}/${environment.mongo_dbname}?authSource=admin`;
   const option = {
     useNewUrlParser: true,
     useCreateIndex: true,
