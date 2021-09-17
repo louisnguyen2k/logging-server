@@ -15,10 +15,13 @@ export class LoggingController {
     const payload = {
       app_name,
       tag: 'info',
-      values: [body],
+      values: { ...body },
+      create_at: new Date(),
     };
+
     console.log('payload', payload);
-    const res = await LogsModel.create(payload);
+    const res = await LogsModel.collection.insertOne(payload);
+    //LogsModel.create(payload);
     return withSuccess(res);
   }
   @Security('token')
@@ -28,9 +31,10 @@ export class LoggingController {
     const payload = {
       app_name,
       tag: 'error',
-      values: [body],
+      values: { ...body },
     };
-    const res = await LogsModel.create(payload);
+    // const res = await LogsModel.create(payload);
+    const res = await LogsModel.collection.insertOne(payload);
     return withSuccess(res);
   }
   @Security('token')
@@ -40,9 +44,10 @@ export class LoggingController {
     const payload = {
       app_name,
       tag: 'warn',
-      values: [body],
+      values: { ...body },
     };
-    const res = await LogsModel.create(payload);
+    // const res = await LogsModel.create(payload);
+    const res = await LogsModel.collection.insertOne(payload);
     return withSuccess(res);
   }
 }
